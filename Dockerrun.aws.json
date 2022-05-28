@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions":[
+        {
+            "name":"service-1",
+            "image":"service-1-image",
+            "hostname": "service-1",
+            "essential": true,
+            "links": "service-2",
+            "memory": 256,
+            "portMappings": [
+                {
+                  "hostPort": 3000,
+                  "containerPort": 3000
+                }
+              ]
+        },
+        {
+            "name":"service-2",
+            "image":"service-2-image",
+            "hostname": "service-2",
+            "essential": true,
+            "memory": 256,
+            "portMappings": [
+                {
+                  "hostPort": 8000,
+                  "containerPort": 8000
+                }
+              ]
+        }
+    ]
+
+
+
+
+}
